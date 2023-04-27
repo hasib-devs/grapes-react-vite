@@ -14,6 +14,10 @@ import MonitorIcon from "../icons/MonitorIcon";
 import SettingsIcon from "../icons/SettingsIcon";
 import LogoIcon from "../icons/LogoIcon";
 import SearchIcon from "../icons/SearchIcon";
+import UndoIcon from "../icons/UndoIcon";
+import RedoIcon from "../icons/RedoIcon";
+import PreviewIcon from "../icons/PreviewIcon";
+import CavetDownIcon from "../icons/CavetDownIcon";
 
 const GrapesEditor = () => {
   useEffect(() => {
@@ -43,6 +47,22 @@ const GrapesEditor = () => {
                 `,
 
             content: '<p data-gjs-type="text">Insert your text here</p>',
+          },
+          {
+            id: "image_block",
+            label: `
+                <svg width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.34169 1.32714C2.23435 1.32714 1.33667 2.21841 1.33667 3.31785V12.5478L6.4331 7.5L14.6407 15.6294L20.1924 10.1174L25.33 15.1943V3.31785C25.33 2.21841 24.4323 1.32714 23.325 1.32714H3.34169ZM26.6658 16.7565C26.6664 16.7318 26.6667 16.707 26.6667 16.6821V3.31785C26.6667 1.48545 25.1705 0 23.325 0H3.34169C1.49612 0 0 1.48545 0 3.31785V14.1454C0 14.1455 0 14.1456 0 14.1457V16.6821C0 18.5145 1.49612 20 3.34169 20H23.325C25.1055 20 26.5608 18.6174 26.6611 16.8746C26.6662 16.8354 26.6678 16.7959 26.6658 16.7565ZM25.2993 17.0313L20.1946 11.987L14.6419 17.5L6.4331 9.36951L1.33667 14.4173V16.6821C1.33667 17.7816 2.23435 18.6729 3.34169 18.6729H23.325C24.3123 18.6729 25.133 17.9642 25.2993 17.0313ZM17.0833 5.46296C16.1884 5.46296 15.463 6.18843 15.463 7.08333C15.463 7.97824 16.1884 8.7037 17.0833 8.7037C17.9782 8.7037 18.7037 7.97824 18.7037 7.08333C18.7037 6.18843 17.9782 5.46296 17.0833 5.46296ZM14.1667 7.08333C14.1667 5.4725 15.4725 4.16667 17.0833 4.16667C18.6942 4.16667 20 5.4725 20 7.08333C20 8.69416 18.6942 10 17.0833 10C15.4725 10 14.1667 8.69416 14.1667 7.08333Z" fill="#6C747A"/>
+                </svg>
+
+                <p class="label">Image</p>
+                `,
+
+            select: true,
+            content: { type: "image" },
+            // This triggers `active` event on dropped components and the `image`
+            // reacts by opening the AssetManager
+            activate: true,
           },
         ],
       },
@@ -94,7 +114,7 @@ const GrapesEditor = () => {
             </div>
           </div>
           {/* Collapsable */}
-          <div className="collapsable">
+          <div className="collapsable flex flex-col">
             {/* Logo */}
             <div className="bg-white p-6 flex justify-center items-end mr-0.5">
               <LogoIcon />
@@ -102,6 +122,7 @@ const GrapesEditor = () => {
                 BUILDER
               </span>
             </div>
+
             {/* Search */}
             <div>
               <form className="flex bg-white mx-2 mt-3 items-center rounded-lg py-2.5 px-4">
@@ -113,8 +134,31 @@ const GrapesEditor = () => {
                 />
               </form>
             </div>
+
             {/* Blocks */}
-            <div id="blocks"></div>
+            <div id="blocks" className="flex-grow"></div>
+
+            {/* Footer - Undo, Redo, Save */}
+            <div className="bg-white px-5 py-2.5">
+              <ul className="flex justify-between items-center">
+                <li>
+                  <UndoIcon />
+                </li>
+                <li>
+                  <RedoIcon />
+                </li>
+                <li>
+                  <PreviewIcon />
+                </li>
+                <li>
+                  <button className="px-5 py-2.5 rounded-full text-white text-sm bg-[#7047eb] flex items-center">
+                    Save
+                    <span className="w-[1px] h-[13px] bg-[#a991f3] mx-3"></span>
+                    <CavetDownIcon />
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 

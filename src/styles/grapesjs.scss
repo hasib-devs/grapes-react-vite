@@ -30,16 +30,23 @@
       justify-content: center;
       align-items: center;
     }
-    .gjs-blocks-c > .gjs-block.gjs-one-bg {
-      background-color: white;
-      border: 0;
-      box-shadow: none;
-      padding: 1.5rem 1rem 1rem 1rem;
-    }
-    .gjs-block-label {
-      .label {
-        margin-top: 10px;
-        color: #333;
+    .gjs-blocks-c {
+      & > .gjs-block.gjs-one-bg {
+        background-color: white;
+        border: 0;
+        box-shadow: none;
+        padding: 1.4rem 1rem 1rem 1rem;
+      }
+
+      .gjs-block {
+        width: 33.33%;
+      }
+      .gjs-block-label {
+        .label {
+          margin-top: 13px;
+          color: #333;
+          font-size: 11px;
+        }
       }
     }
   }
