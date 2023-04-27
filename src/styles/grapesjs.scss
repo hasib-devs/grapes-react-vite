@@ -1,5 +1,8 @@
 /* Let's highlight canvas boundaries */
 .grapes-editor {
+  ///////////////
+  // Overriding
+  // ///////////
   #gjs {
     background-color: white;
   }
@@ -17,8 +20,35 @@
     min-height: auto;
   }
 
+  #blocks {
+    & > .gjs-one-bg {
+      background-color: transparent;
+    }
+    .gjs-block-label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .gjs-blocks-c > .gjs-block.gjs-one-bg {
+      background-color: white;
+      border: 0;
+      box-shadow: none;
+      padding: 1.5rem 1rem 1rem 1rem;
+    }
+    .gjs-block-label {
+      .label {
+        margin-top: 10px;
+        color: #333;
+      }
+    }
+  }
+
+  /////////////////////
+  // Custom Style
+  // ///////////////////
   .sidebar {
-    width: 310px;
+    width: 350px;
     display: flex;
     .minibar {
       width: 60px;
