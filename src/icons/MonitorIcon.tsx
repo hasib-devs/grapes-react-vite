@@ -15,7 +15,7 @@ const MonitorIcon = () => {
         rx="1.25"
         fill="#AAB3B6"
         stroke="#AAB3B6"
-        stroke-width="1.5"
+        strokeWidth="1.5"
       />
       <line
         x1="7.75"
@@ -23,7 +23,7 @@ const MonitorIcon = () => {
         x2="7.75"
         y2="14"
         stroke="#AAB3B6"
-        stroke-width="1.5"
+        strokeWidth="1.5"
       />
       <line
         x1="3.75"
@@ -31,8 +31,8 @@ const MonitorIcon = () => {
         x2="12.25"
         y2="14.25"
         stroke="#AAB3B6"
-        stroke-width="1.5"
-        stroke-linecap="square"
+        strokeWidth="1.5"
+        strokeLinecap="square"
       />
     </svg>
   );

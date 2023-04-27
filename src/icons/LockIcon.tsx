@@ -23,7 +23,7 @@ const LockIcon = () => {
         height="11.9828"
         rx="3.25"
         stroke="#AAB3B6"
-        stroke-width="1.5"
+        strokeWidth="1.5"
       />
     </svg>
   );

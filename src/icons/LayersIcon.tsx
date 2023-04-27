@@ -1,4 +1,4 @@
-const Layers = () => {
+const LayersIcon = () => {
   return (
     <svg
       width="24"
@@ -22,4 +22,4 @@ const Layers = () => {
   );
 };
 
-export default Layers;
+export default LayersIcon;
