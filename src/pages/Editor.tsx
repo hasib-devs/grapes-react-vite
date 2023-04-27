@@ -1,5 +1,11 @@
+import GrapesEditor from "../components/GrapesEditor";
+
 const Editor = () => {
-  return <div>Editor</div>;
+  return (
+    <>
+      <GrapesEditor />
+    </>
+  );
 };
 
 export default Editor;
