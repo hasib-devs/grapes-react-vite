@@ -7,6 +7,12 @@ import MiniBarIcon from "../icons/MiniBarIcon";
 import PlusRoundedIcon from "../icons/PlusRoundedIcon";
 import LayersIcon from "../icons/LayersIcon";
 import BrushIcon from "../icons/BrushIcon";
+import DokanIcon from "../icons/DokanIcon";
+import LockIcon from "../icons/LockIcon";
+import RevertIcon from "../icons/RevertIcon";
+import MonitorIcon from "../icons/MonitorIcon";
+import SettingsIcon from "../icons/SettingsIcon";
+import LogoIcon from "../icons/LogoIcon";
 
 const GrapesEditor = () => {
   useEffect(() => {
@@ -47,10 +53,38 @@ const GrapesEditor = () => {
                 </li>
               </ul>
             </div>
-            <div className="minibar_middle"></div>
-            <div className="minibar_bottom"></div>
+            <div className="minibar_middle">
+              <DokanIcon />
+            </div>
+            <div className="minibar_bottom">
+              <ul className="">
+                <li className="py-4 my-3 cursor-pointer flex justify-center items-center">
+                  <LockIcon />
+                </li>
+
+                <li className="py-4 my-3 cursor-pointer flex justify-center items-center">
+                  <RevertIcon />
+                </li>
+
+                <li className="py-4 my-3 cursor-pointer flex justify-center items-center">
+                  <MonitorIcon />
+                </li>
+
+                <li className="py-4 my-3 cursor-pointer flex justify-center items-center">
+                  <SettingsIcon />
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="collapsable"></div>
+          <div className="collapsable">
+            {/* Logo */}
+            <div className="bg-white p-6 flex justify-center items-end mr-0.5">
+              <LogoIcon />
+              <span className="text-xs text-gray-400 ml-2 -mb-[0.2rem] tracking-widest">
+                BUILDER
+              </span>
+            </div>
+          </div>
         </div>
         <div id="gjs" className="flex-1 h-full"></div>
       </div>
