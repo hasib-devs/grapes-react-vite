@@ -1,11 +1,34 @@
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useEffect } from "react";
+import axios from "../plugins/axios";
+import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [pageName, setPageName] = useState("");
+  const [pages, setPages] = useState({ data: [] });
+
+  useEffect(() => {
+    const fetchPages = async () => {
+      try {
+        const res = await axios.get("/pages");
+        setPages(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchPages();
+  }, []);
 
   const savePage = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("save page");
+    try {
+      await axios.post("/pages", { data: { name: pageName } });
+      setPageName("");
+      toast.success("Created Successfully");
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong");
+    }
   };
   return (
     <>
@@ -30,8 +53,32 @@ const Home = () => {
           </form>
 
           {/* Page List */}
-          <div className="flex justify-between mt-10">
-            <h1 className="text-3xl">Page List</h1>
+          <div className="mt-10">
+            <h1 className="text-3xl mb-5">Page List</h1>
+
+            <table className="w-full text-left">
+              <thead className="">
+                <tr>
+                  <th>Page Name</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {pages.data.map((page: any) => (
+                  <tr key={page.id}>
+                    <td>{page.attributes.name}</td>
+                    <td>
+                      <Link to={`/editor/${page.id}`}>
+                        <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-2 rounded ">
+                          Editor
+                        </button>
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
