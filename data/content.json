@@ -1,6 +1,6 @@
 {
     "content": {
-        "mycustom-html": "<div id=\"i057\">Hello world</div>",
+        "mycustom-html": "<div id='i057'>Hello world</div>",
         "mycustom-components": [
             {
                 "type": "text",

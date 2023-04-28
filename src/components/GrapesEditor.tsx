@@ -25,8 +25,8 @@ const GrapesEditor = () => {
   return (
     <div className="grapes-editor">
       <div className="flex h-screen">
-        <div className="sidebar">
-          <div className="minibar">
+        <div className="w-[350px] flex">
+          <div className="w-[60px] h-full flex flex-col justify-between items-center bg-[#1a232d]">
             <div className="minibar_top">
               <ul className="">
                 <li className="py-4 my-2 cursor-pointer flex justify-center items-center border-b border-gray-700">
@@ -67,7 +67,7 @@ const GrapesEditor = () => {
             </div>
           </div>
           {/* Collapsable */}
-          <div className="collapsable flex flex-col">
+          <div className="flex flex-col w-full bg-[#f2f2f5]">
             {/* Logo */}
             <div className="bg-white p-6 flex justify-center items-end mr-0.5">
               <LogoIcon />
