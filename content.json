@@ -1,0 +1,59 @@
+{
+    "content": {
+        "mycustom-html": "<div id=\"i057\">Hello world</div>",
+        "mycustom-components": [
+            {
+                "type": "text",
+                "attributes": {
+                    "id": "i057"
+                },
+                "components": [
+                    {
+                        "type": "textnode",
+                        "removable": false,
+                        "draggable": false,
+                        "highlightable": 0,
+                        "copyable": false,
+                        "selectable": true,
+                        "content": "Hello world",
+                        "_innertext": false
+                    }
+                ]
+            }
+        ],
+        "mycustom-assets": [
+            {
+                "type": "image",
+                "src": "http://placehold.it/350x250/459ba8/fff/image2.jpg",
+                "unitDim": "px",
+                "height": 350,
+                "width": 250
+            },
+            {
+                "type": "image",
+                "src": "http://placehold.it/350x250/79c267/fff/image3.jpg",
+                "unitDim": "px",
+                "height": 350,
+                "width": 250
+            },
+            {
+                "type": "image",
+                "src": "http://placehold.it/350x250/79c267/fff/image3.jpg",
+                "unitDim": "px",
+                "height": 350,
+                "width": 250
+            }
+        ],
+        "mycustom-css": "* { box-sizing: border-box; } body {margin: 0;}#i057{padding:10px;}",
+        "mycustom-styles": [
+            {
+                "selectors": [
+                    "#i057"
+                ],
+                "style": {
+                    "padding": "10px"
+                }
+            }
+        ]
+    }
+}

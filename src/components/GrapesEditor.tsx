@@ -1,5 +1,5 @@
-import grapesjs from "grapesjs";
-import { useEffect } from "react";
+import grapesjs, { Editor } from "grapesjs";
+import { useEffect, useState } from "react";
 
 import "grapesjs/dist/css/grapes.min.css";
 import "../styles/grapesjs.scss";
@@ -21,8 +21,9 @@ import CavetDownIcon from "../icons/CavetDownIcon";
 import ArrowDown from "../icons/ArrowDown";
 
 const GrapesEditor = () => {
+  const [editor, setEditor] = useState<Editor>();
   useEffect(() => {
-    const editor = grapesjs.init({
+    const e = grapesjs.init({
       // Indicate where to init the editor. You can also pass an HTMLElement
       container: "#gjs",
       // Get the content for the canvas directly from the element
@@ -86,11 +87,18 @@ const GrapesEditor = () => {
             <p class="label">Inner Section</p>
             `,
 
-            content: '<div data-gjs-type="text">Heading Title</div>',
+            content: `
+            <section class="bdg-sect">
+            <h1 class="heading">Insert title here</h1>
+            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+            </section>
+            `,
           },
         ],
       },
     });
+
+    setEditor(e);
   }, []);
 
   return (
@@ -171,10 +179,16 @@ const GrapesEditor = () => {
             {/* Footer - Undo, Redo, Save */}
             <div className="bg-white px-5 py-2.5">
               <ul className="flex justify-between items-center">
-                <li>
+                <li
+                  onClick={() => editor?.runCommand("core:undo")}
+                  className="cursor-pointer"
+                >
                   <UndoIcon />
                 </li>
-                <li>
+                <li
+                  onClick={() => editor?.runCommand("core:redo")}
+                  className="cursor-pointer"
+                >
                   <RedoIcon />
                 </li>
                 <li>
