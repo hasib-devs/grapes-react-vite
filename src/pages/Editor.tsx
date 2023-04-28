@@ -1,9 +1,12 @@
 import GrapesEditor from "../components/GrapesEditor";
+import { EditorProvider } from "../contexts/EditorContext";
 
 const Editor = () => {
   return (
     <>
-      <GrapesEditor />
+      <EditorProvider>
+        <GrapesEditor />
+      </EditorProvider>
     </>
   );
 };
